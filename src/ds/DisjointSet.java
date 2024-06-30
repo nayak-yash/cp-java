@@ -31,7 +31,7 @@ public class DisjointSet {
         }
     }
 
-   public boolean isConnected(int u, int v) {
+    public boolean isConnected(int u, int v) {
         return findParent(u) == findParent(v);
     }
 }
