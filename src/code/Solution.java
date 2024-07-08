@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.*;
-
-import static java.lang.Math.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 class Solution {
     private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private final static PrintWriter out = new PrintWriter(System.out);
+    private final static Logger logger = Logger.getLogger(Main.class.getName());
     private StringTokenizer st = new StringTokenizer("");
     private final Utils utils = new Utils();
     private final String TAG = "debug";
@@ -21,7 +22,7 @@ class Solution {
     private final long LONG_MAX = Long.MAX_VALUE;
     private final long LONG_MIN = Long.MIN_VALUE;
     private final int INF = 2000_000_000;
-    private final long LONG_INF = 1000_000_000000000L;
+    private final long LONG_INF = 1000_000_000_000_000L;
     private final long MOD = 1000_000_007;
 
     private boolean multiCase = true;
@@ -29,14 +30,17 @@ class Solution {
     public void invoke() {
         int t = 1;
         if (multiCase) t = nextInt();
+        long startTime = System.nanoTime();
         while (t --> 0) {
             solve();
         }
+        long duration = (System.nanoTime() - startTime) / 1_000_000;
         out.flush();
+        logger.log(Level.INFO, "Execution time: {0} ms", duration);
     }
 
     private void solve() {
-        // write your code
+
     }
 
     public String next() {
@@ -152,73 +156,62 @@ class Solution {
         out.println();
     }
 
-    public void debug(int[] arr) {
+    public void print(int[] arr) {
         for (int a : arr)
             print(a);
         println();
     }
 
-    public void debug(long[] arr) {
+    public void print(long[] arr) {
         for (long a : arr)
             print(a);
         println();
     }
 
-    public void debug(double[] arr) {
+    public void print(double[] arr) {
         for (double a : arr)
             print(a);
         println();
     }
 
-    public void debug(char[] arr) {
+    public void print(char[] arr) {
         for (char a : arr)
             print(a);
         println();
     }
 
-    public void debug(String[] arr) {
+    public void print(String[] arr) {
         for (String a : arr)
             print(a);
         println();
     }
 
-    public void debug(int[][] arr) {
+    public void print(int[][] arr) {
         for (int[] a : arr)
-            debug(a);
-        println();
-    }
-
-    public void debug(long[][] arr) {
-        for (long[] a : arr)
-            debug(a);
-        println();
-    }
-
-    public void debug(double[][] arr) {
-        for (double[] a : arr)
-            debug(a);
-        println();
-    }
-
-    public void debug(char[][] arr) {
-        for (char[] a : arr)
-            debug(a);
-        println();
-    }
-
-    public void debug(String[][] arr) {
-        for (String[] a : arr)
-            debug(a);
-        println();
-    }
-
-    public void debug(Object[] arr) {
-        for (Object a : arr)
             print(a);
-        println();
     }
 
-    public void debug(Collection<Object> arr) {
+    public void print(long[][] arr) {
+        for (long[] a : arr)
+            print(a);
+    }
+
+    public void print(double[][] arr) {
+        for (double[] a : arr)
+            print(a);
+    }
+
+    public void print(char[][] arr) {
+        for (char[] a : arr)
+            print(a);
+    }
+
+    public void print(String[][] arr) {
+        for (String[] a : arr)
+            print(a);
+    }
+
+    public void print(Collection<Object> arr) {
         for (Object a : arr)
             print(a);
         println();
